@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void increment(View view) {
         quantity = quantity + 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void decrement(View view) {
         quantity = quantity - 1;
-        display(quantity);
+        displayQuantity(quantity);
     }
 
     /**
@@ -60,13 +60,20 @@ public class MainActivity extends AppCompatActivity {
         return price;
     }
 
+    private String createOrderSummary(int price) {
+        String priceMessage = "Business name: Kahawa cups";
+        priceMessage = priceMessage + "Quantity: " + quantity;
+        priceMessage = priceMessage + "Total: $" + price;
+        priceMessage = priceMessage + "\nThank you!";
+        return priceMessage;
+    }
     /**
-     * This method displays the given quantity value on the screen.
+     * This method displays the given quantity value on the screen
      */
-
-    private void display(int number) {
-        TextView quantityTextView = (TextView) findViewById(R.id.quantity_text_view);
-        quantityTextView.setText("" + number);
+    private void displayQuantity(int numberOfCoffees) {
+        TextView quantityTextView = (TextView) findViewById(
+                R.id.quantity_text_view);
+        quantityTextView.setText("" + numberOfCoffees);
     }
 
     /**
