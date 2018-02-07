@@ -59,6 +59,13 @@ public class MainActivity extends AppCompatActivity {
         return price;
     }
 
+    /**
+     * Create summary of the order.
+     *
+     * @param price of the order
+     * @return text summary
+     */
+
     private String createOrderSummary(int price) {
         String priceMessage = "Business name: Kahawa cups";
         priceMessage = priceMessage + "\nQuantity: " + quantity;
@@ -75,16 +82,7 @@ public class MainActivity extends AppCompatActivity {
         quantityTextView.setText("" + numberOfCoffees);
     }
 
-    /**
-     * This method displays the given price on the screen.
-     */
-
-    private void displayPrice(int number) {
-        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
-        priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
-    }
-
-    /**
+   /**
      * This method displays the given text on the screen.
      */
     private void displayMessage(String message) {
