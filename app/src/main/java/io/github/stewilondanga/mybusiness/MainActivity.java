@@ -48,6 +48,18 @@ public class MainActivity extends AppCompatActivity {
         String priceMessage = "Total: $" + price;
         priceMessage = priceMessage + "\nThank you!";
         displayMessage(priceMessage);
+
+        calculatePrice(quantity, 10);
+    }
+
+    /**
+     * Calculates the price of the order.
+     *
+     * @param quantity is the number of cups of coffee ordered
+     * @param pricePerCup is the price of one cup of coffee
+     */
+    private void calculatePrice(int quantity, int pricePerCup) {
+        int price = quantity * 5;
     }
 
     /**
@@ -74,14 +86,5 @@ public class MainActivity extends AppCompatActivity {
     private void displayMessage(String message) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(message);
-    }
-
-    /**
-     * Calculates the price of the order.
-     *
-     * @param quantity is the number of cups of coffee ordered
-     */
-    private void calculatePrice(int quantity) {
-        int price = quantity * 5;
     }
 }
