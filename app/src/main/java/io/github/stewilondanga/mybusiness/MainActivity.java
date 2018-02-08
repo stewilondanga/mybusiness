@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
     public void submitOrder(View view) {
         CheckBox whippedCreamCheckBox = (CheckBox) findViewById(R.id.whipped_cream_checkbox);
         boolean hasWhippedCream = whippedCreamCheckBox.isChecked();
-
         int price = calculatePrice();
         String priceMessage = createOrderSummary(price, hasWhippedCream);
         displayMessage(priceMessage);
@@ -73,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     private String createOrderSummary(int price, boolean addWhippedCream) {
         String priceMessage = "Business name: Kahawa cups";
-        priceMessage += "Add whipped cream? " + addWhippedCream;
+        priceMessage += "\nAdd whipped cream? " + addWhippedCream;
         priceMessage += "\nQuantity: " + quantity;
         priceMessage += "\nTotal: $" + price;
         priceMessage += "\nThank you!";
